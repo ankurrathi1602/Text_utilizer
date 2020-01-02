@@ -18,13 +18,17 @@ def index(request):
     #return HttpResponse('<h2>Home</h2>')
 
 def analyze(request):
-    djtext=request.GET.get('text','off')
+    djtext=request.GET.get('text','default')
+    punctuate = request.GET.get('punctuation', 'off')
     print(djtext)
-    punctuation = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
-    analyzed = ""
-    for char in djtext:
-        if char not in punctuation:
-            analyzed += char
+    if punctuate == "on":
+        punctuation = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        analyzed = ""
+        for char in djtext:
+            if char not in punctuation:
+                analyzed += char
+    else:
+        return HttpResponse("Please!! tick the checkbox.")
 
     params = {'purpose': 'Removed from the text', 'analyzed_text': analyzed}
 
