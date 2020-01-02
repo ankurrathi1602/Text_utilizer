@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>ANALYZER</h1>
+    <h2>Welcome to the text analyzer. Enter your text below</h2>
+    <form action="/analyze" method="GET">
+      {% csrf_token %}
+      <textarea name="text" rows="8" cols="80" placeholder="Enter your text here"></textarea>
+      <br>
+      <input type="checkbox" name="punctuation"> Remove Punctuations<br>
+      <button type="submit">Analyze text</button>
+    </form>
+  </body>
+</html>
