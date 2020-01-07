@@ -14,7 +14,7 @@ def navbar(request): # for navigation bar
     return HttpResponse(nav)
 """
 def index(request):
-    return render(request, 'index1.html')
+    return render(request, 'index.html')
     #return HttpResponse('<h2>Home</h2>')
 
 def analyze(request):
