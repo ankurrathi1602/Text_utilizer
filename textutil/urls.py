@@ -23,4 +23,5 @@ urlpatterns = [
     path('analyze', views.analyze, name="analyze"),
 
 
+
 ]
