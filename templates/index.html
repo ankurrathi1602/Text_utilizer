@@ -7,7 +7,7 @@
   <body>
     <h1>ANALYZER</h1>
     <h2>Welcome to the text analyzer. Enter your text below</h2>
-    <form action="/analyze" method="GET">
+    <form action="/analyze" method="POST">
       {% csrf_token %}
       <textarea name="text" rows="8" cols="80" placeholder="Enter your text here"></textarea>
       <br>

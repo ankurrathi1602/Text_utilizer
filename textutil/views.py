@@ -14,13 +14,13 @@ def navbar(request): # for navigation bar
     return HttpResponse(nav)
 """
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index1.html')
     #return HttpResponse('<h2>Home</h2>')
 
 def analyze(request):
-    djtext=request.GET.get('text','default')
-    punctuate = request.GET.get('punctuation', 'off')
-    charcount = request.GET.get('charcount', 'off')
+    djtext=request.POST.get('text','default')
+    punctuate = request.POST.get('punctuation', 'off')
+    charcount = request.POST.get('charcount', 'off')
 
     print(djtext)
     if punctuate == "on":
